@@ -9,6 +9,7 @@ const schema = z.object({
   API_NAME: z.string().default(packageJson.name),
   API_PORT: z.coerce.number().default(3333),
   API_ACCESS_PERMISSION_CLIENT_SIDE: z.string().default("*"),
+  NOTION_ACCESS_TOKEN: z.string(),
 });
 
 const parsedEnv = schema.safeParse(process.env);
