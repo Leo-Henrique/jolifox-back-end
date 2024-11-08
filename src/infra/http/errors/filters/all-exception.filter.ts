@@ -4,8 +4,10 @@ import {
   ExceptionFilter,
   HttpException,
 } from "@nestjs/common";
+import { APIResponseError } from "@notionhq/client";
 import { FastifyReply } from "fastify";
 import { InternalServerError } from "../internal-server.error";
+import { NotionServiceError } from "../notion-service.error";
 
 @Catch()
 export class AllExceptionFilter implements ExceptionFilter {
@@ -16,7 +18,9 @@ export class AllExceptionFilter implements ExceptionFilter {
     let httpError: HttpException;
 
     if (exception instanceof HttpException) httpError = exception;
-    else {
+    else if (exception instanceof APIResponseError) {
+      httpError = new NotionServiceError(exception);
+    } else {
       const debugFromUnknownError =
         exception && typeof exception === "object" && "message" in exception
           ? exception.message
