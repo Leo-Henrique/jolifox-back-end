@@ -50,7 +50,7 @@ Desta forma, você precisa de uma principal dependência instalada:
 
 Um serviço / container será iniciado contendo a API em Node.js que usa [node:20.18-alpine](https://hub.docker.com/layers/library/node/20.18-alpine/images/sha256-d504f23acdda979406cf3bdbff0dff7933e5c4ec183dda404ed24286c6125e60?context=explore) como imagem base.
 
-Na pasta do projeto:
+Com o Docker já em execução, execute o comando na raiz do projeto:
 
 ```bash
 docker compose up -d --build
