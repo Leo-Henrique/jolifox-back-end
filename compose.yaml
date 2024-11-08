@@ -1,0 +1,15 @@
+services:
+  api:
+    container_name: "${API_NAME}-api"
+    build: .
+    environment:
+      - API_PORT=${API_PORT}
+    ports:
+      - ${API_PORT}:${API_PORT}
+    networks:
+      app-network:
+
+networks:
+  app-network:
+    name: "${API_NAME}-network"
+    driver: bridge

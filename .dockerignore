@@ -1,0 +1,46 @@
+# Deps
+node_modules
+.npmrc
+
+# Pre-commit hooks
+.husky
+.lintstagedrc.json
+
+# Lint
+.eslintrc.json
+.eslintcache
+
+# Code formatter
+.prettierrc.json
+.prettierignore
+
+# Editor
+.vscode
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+compose.yaml
+.dockerignore
+
+# Docs
+*.md
+
+# Local build
+dist
+
+# Tests
+coverage
+test
+vitest.config.mts
+vitest.config.integration.mts
+**/*spec.ts
+
+# Environment variables
+.env.example
+
+# OS
+.DS_Store
